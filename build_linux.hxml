@@ -19,3 +19,10 @@
 
 ##// Where the game compiles to ##//
 --cpp bin/cpp
+
+# File Specific Defines
+--define linux
+
+# Copying the assets from source code to bin folder
+--cmd rm -rf bin/cpp/assets
+--cmd cp -r assets bin/cpp/assets

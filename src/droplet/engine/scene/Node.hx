@@ -52,19 +52,19 @@ class Node {
 
     @:noCompletion
     private function _update(_delta:Float) {
+        update(_delta);
         for(child in children) {
             if(child == null) continue;
             child._update(_delta);
         }
-        update(_delta);
     }
 
     @:noCompletion
     private function _render() {
+        render();
         for(child in children) {
             if(child == null) continue;
             child._render();
         }
-        render();
     }
 }

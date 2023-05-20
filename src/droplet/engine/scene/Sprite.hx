@@ -13,8 +13,18 @@ class Sprite extends Node2D {
 	}
 
 	override function render() {
-		Rl.drawTexturePro(texture, Rl.Rectangle.create(0, 0, texture.width, texture.height),
-			Rl.Rectangle.create(position.x, position.y, Math.abs(texture.width * scale.x), Math.abs(texture.height * scale.y)), origin.toRaylib(), angle,
-			color.convertToRaylib());
+		Rl.drawTexturePro(texture, 
+            Rl.Rectangle.create(
+                0, 0, 
+                texture.width, texture.height
+            ),
+			Rl.Rectangle.create(
+                position.x, position.y,
+                Math.abs(texture.width * scale.x), Math.abs(texture.height * scale.y)
+            ), 
+            origin.toRaylib(),
+            angle,
+			color.convertToRaylib()
+        );
 	}
 }
