@@ -1,0 +1,21 @@
+##// The folder containing the source code ##//
+--class-path src
+
+##// Determines what libraries should be used ##//
+# https://github.com/foreignsasquatch/raylib-hx
+--library raylib-hx
+
+##// Allows errors to print to the console correctly ##//
+--define HXCPP_CHECK_POINTER
+--define HXCPP_STACK_LINE
+--define HXCPP_DEBUG_LINK
+--define analyzer-optimize
+
+##// Forces the game to compile every class ##//
+--dce no
+
+##// Compiles determines what the main class is ##//
+--main Main
+
+##// Where the game compiles to ##//
+--cpp bin/cpp
