@@ -12,7 +12,7 @@ class Renderer {
 	}
 
 	public static inline function clear(color:DropletColor) {
-		Rl.clearBackground(color.convertToRaylib());
+		Rl.clearBackground(color.toRaylib());
 	}
 
 	@:noCompletion

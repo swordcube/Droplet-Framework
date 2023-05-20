@@ -15,8 +15,7 @@ import droplet.backend.macros.MacroUtil;
  *
  * @author Joe Williamson (JoeCreates)
  */
-@:unreflective
-abstract DropletColor(Int) from Int to Int {
+abstract DropletColor(Int) from Int from UInt to Int to UInt {
 	public static var Transparent:DropletColor = 0x00000000;
 	public static var White:DropletColor = 0xFFFFFFFF;
 	public static var Gray:DropletColor = 0xFF808080;
@@ -721,7 +720,7 @@ abstract DropletColor(Int) from Int to Int {
 		return Value > 0xff ? 0xff : Value < 0 ? 0 : Value;
 	}
 
-	public inline function convertToRaylib():Rl.Color {
+	public inline function toRaylib():Rl.Color {
 		return Rl.Color.create(get_red(), get_green(), get_blue(), get_alpha());
 	}
 }

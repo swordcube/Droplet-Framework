@@ -9,6 +9,14 @@ class Node {
     public function new() {}
 
     /**
+     * A function that gets called when this child
+     * is added to a node.
+     * 
+     * Override this to make custom behavior.
+     */
+    public function ready() {}
+
+    /**
      * A function that gets called every frame.
      * Override this to make custom behavior.
      * @param delta The time that has passed since last frame in seconds.
@@ -29,6 +37,7 @@ class Node {
      */
     public function add(node:Node) {
         children.push(node);
+        node.ready();
     }
 
     /**
@@ -37,6 +46,7 @@ class Node {
      */
     public function remove(node:Node) {
         children.remove(node);
+        node.ready();
     }
 
     /**

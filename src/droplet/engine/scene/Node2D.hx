@@ -27,4 +27,9 @@ class Node2D extends Node {
      * `1, 1` = Bottom Right
      */
     public var origin:Vector2D = new Vector2D(0, 0);
+
+    /**
+     * Whether or not this node should be drawn to the screen.
+     */
+    public var visible:Bool = true;
 }

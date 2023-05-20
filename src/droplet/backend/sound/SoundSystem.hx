@@ -2,6 +2,7 @@ package droplet.backend.sound;
 
 class SoundSystem {
     public static function init() {
-        Rl.initAudioDevice();
+        // does nothing until hxopenal supports other formats
+        // than just wav
     }
 }

@@ -1,5 +1,6 @@
 package droplet.engine.system;
 
+import droplet.engine.assets.AssetCache;
 import droplet.engine.utilities.MathUtil;
 import droplet.backend.graphics.*;
 import droplet.backend.sound.*;
@@ -72,10 +73,23 @@ class Game {
 	public static var maxElapsed:Float = 0.1;
 
 	/**
-	 * The background color the window displayed when it isn't
+	 * The background color the window displays when it isn't
 	 * fully covered by another sprite/object.
 	 */
 	public static var clearColor:DropletColor = DropletColor.Black;
+
+    /**
+     * The main camera used to render objects onto the screen.
+     * 
+     * You can add more cameras for stuff like HUD's if you need to
+     * by doing:
+     * ```haxe
+     * Game.cameras.add(hudCam);
+     * ```
+     */
+    public static var camera:Camera;
+
+    public static var assetCache:AssetCache = new AssetCache();
 
 	private static var _renderTexture:Rl.RenderTexture2D;
 
@@ -97,7 +111,7 @@ class Game {
 
 		window = new Window(Game.width = width, Game.height = height, title);
 		scene = initialScene;
-		scene.create();
+		scene.ready();
 
 		_renderTexture = Rl.loadRenderTexture(width, height);
 
