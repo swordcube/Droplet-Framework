@@ -1,6 +1,5 @@
 package;
 
-import droplet.engine.scene.TestScene;
 import droplet.engine.system.Game;
 
 class Main {

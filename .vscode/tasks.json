@@ -4,6 +4,14 @@
 		{
 			"type": "haxe",
 			"args": "active configuration",
+			"group": "build",
+			"label": "haxe: active configuration"
+		},
+		{
+			"type": "shell",
+			"command": "./build.sh",
+			"label": "Build (Linux)",
+			"problemMatcher": [],
 			"group": {
 				"kind": "build",
 				"isDefault": true

@@ -16,23 +16,23 @@ import droplet.backend.macros.MacroUtil;
  * @author Joe Williamson (JoeCreates)
  */
 @:unreflective
-abstract DropletColor(Int) from Int from UInt to Int to UInt {
-	public static var TRANSPARENT:DropletColor = 0x00000000;
-	public static var WHITE:DropletColor = 0xFFFFFFFF;
-	public static var GRAY:DropletColor = 0xFF808080;
-	public static var BLACK:DropletColor = 0xFF000000;
+abstract DropletColor(Int) from Int to Int {
+	public static var Transparent:DropletColor = 0x00000000;
+	public static var White:DropletColor = 0xFFFFFFFF;
+	public static var Gray:DropletColor = 0xFF808080;
+	public static var Black:DropletColor = 0xFF000000;
 
-	public static var GREEN:DropletColor = 0xFF008000;
-	public static var LIME:DropletColor = 0xFF00FF00;
-	public static var YELLOW:DropletColor = 0xFFFFFF00;
-	public static var ORANGE:DropletColor = 0xFFFFA500;
-	public static var RED:DropletColor = 0xFFFF0000;
-	public static var PURPLE:DropletColor = 0xFF800080;
-	public static var BLUE:DropletColor = 0xFF0000FF;
-	public static var BROWN:DropletColor = 0xFF8B4513;
-	public static var PINK:DropletColor = 0xFFFFC0CB;
-	public static var MAGENTA:DropletColor = 0xFFFF00FF;
-	public static var CYAN:DropletColor = 0xFF00FFFF;
+	public static var Green:DropletColor = 0xFF008000;
+	public static var Lime:DropletColor = 0xFF00FF00;
+	public static var Yellow:DropletColor = 0xFFFFFF00;
+	public static var Orange:DropletColor = 0xFFFFA500;
+	public static var Red:DropletColor = 0xFFFF0000;
+	public static var Purple:DropletColor = 0xFF800080;
+	public static var Blue:DropletColor = 0xFF0000FF;
+	public static var Brown:DropletColor = 0xFF8B4513;
+	public static var Pink:DropletColor = 0xFFFFC0CB;
+	public static var Magenta:DropletColor = 0xFFFF00FF;
+	public static var Cyan:DropletColor = 0xFF00FFFF;
 
 	/**
 	 * A `Map<String, Int>` whose values are the static colors of `DropletColor`.
@@ -409,7 +409,7 @@ abstract DropletColor(Int) from Int from UInt to Int to UInt {
 	 */
 	public function getInverted():DropletColor {
 		var oldAlpha = alpha;
-		var output:DropletColor = DropletColor.WHITE - this;
+		var output:DropletColor = DropletColor.White - this;
 		output.alpha = oldAlpha;
 		return output;
 	}
@@ -661,7 +661,7 @@ abstract DropletColor(Int) from Int from UInt to Int to UInt {
 		var hueRad = Math.atan2(Math.sqrt(3) * (greenFloat - blueFloat), 2 * redFloat - greenFloat - blueFloat);
 		var hue:Float = 0;
 		if (hueRad != 0) {
-			hue = 180 / Math.PI * hueRad;
+			hue = 180 / MathUtil.STANDARD_PI * hueRad;
 		}
 
 		return hue < 0 ? hue + 360 : hue;

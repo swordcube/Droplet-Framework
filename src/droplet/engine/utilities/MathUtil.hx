@@ -14,6 +14,8 @@ class MathUtil {
 	public static inline var SHORT_PI:Float = 3.14;
 	public static inline var FULL_PI:Float = 3.141592653589793238462643383279502884197;
 
+	public static inline var RAYLIB_PI:Float = 3.14159265358979323846;
+
 	/**
 	 * Minimum value of a floating point number.
 	 */
