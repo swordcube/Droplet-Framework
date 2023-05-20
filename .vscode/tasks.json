@@ -9,7 +9,7 @@
 		},
 		{
 			"type": "shell",
-			"command": "./build.sh",
+			"command": "./build_linux.sh",
 			"label": "Build (Linux)",
 			"problemMatcher": [],
 			"group": {
