@@ -46,7 +46,6 @@ class Node {
      */
     public function remove(node:Node) {
         children.remove(node);
-        node.ready();
     }
 
     /**
